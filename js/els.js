@@ -14,7 +14,7 @@ function setTitle() {
 		.append($('<th/>', {}).append($('<font/>', { text : '종목' } )))
 		.append($('<th/>', {}).append($('<font/>', { text : '지수' } )))
 		.append($('<th/>', {}).append($('<font/>', { text : '비율' } )))
-		.append($('<th/>', {}).append($('<font/>', { text : '변동 비율' } )))
+		.append($('<th/>', {}).append($('<font/>', { text : '변동' } )))
 	);
 }
 
