@@ -14,6 +14,7 @@ function setTitle() {
 		.append($('<th/>', {}).append($('<font/>', { text : '종목' } )))
 		.append($('<th/>', {}).append($('<font/>', { text : '지수' } )))
 		.append($('<th/>', {}).append($('<font/>', { text : '비율' } )))
+		.append($('<th/>', {}).append($('<font/>', { text : '변동 비율' } )))
 	);
 }
 
@@ -22,6 +23,7 @@ function setContents(rows) {
 		$("#els").append($('<tr/>')
 			.append($('<td/>', { 'align' : 'center' }).append($('<font/>', { text : row['stock'] } )))
 			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['index'] } )))
+			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['rate'] } )))
 			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['rate'] } )))
 		);
 	}
