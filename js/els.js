@@ -23,7 +23,7 @@ function setContents(rows) {
 		$("#els").append($('<tr/>')
 			.append($('<td/>', { 'align' : 'center' }).append($('<font/>', { text : row['stock'] } )))
 			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['index'] } )))
-			.append($('<td/>', { 'align' :  'right', style : 'font-weight : bold' }).append($('<font/>', { text : row['rate'] } )))
+			.append($('<td/>', { 'align' :  'right', style : 'font-weight : bold' }).append($('<font/>', { text : row['rate'], color : getFontColor(row['index'], row['yindex']) } )))
 			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['crate'], color : getFontColor(row['index'], row['yindex']) } )))
 		);
 	}
