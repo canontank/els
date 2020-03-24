@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#els").append$('<tr/>')
+	$("#els").append($('<tr/>')
 		.append($('<th/>', {}).append($('<font/>', { text : '종목' } )))
 		.append($('<th/>', {}).append($('<font/>', { text : '지수' } )))
 		.append($('<th/>', {}).append($('<font/>', { text : '비율' } )))
