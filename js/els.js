@@ -23,8 +23,14 @@ function setContents(rows) {
 		$("#els").append($('<tr/>')
 			.append($('<td/>', { 'align' : 'center' }).append($('<font/>', { text : row['stock'] } )))
 			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['index'] } )))
-			.append($('<td/>', { 'align' :  'right', style : 'font-weight : bold' }).append($('<font/>', { text : row['rate'], color : '#003ACE' } )))
-			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['crate'], color : '#F93345' } )))
+			.append($('<td/>', { 'align' :  'right', style : 'font-weight : bold' }).append($('<font/>', { text : row['rate'] } )))
+			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['crate'], color : getFontColor(row['crate']) } )))
 		);
 	}
+}
+
+function getFontColor(crate) {
+	if (crate.indexOf("-") >= 0)
+		return '#003ACE';
+	return '#F93345';
 }
