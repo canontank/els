@@ -1,0 +1,62 @@
+body {
+    padding-top : 50px;
+    font-size : 14px;
+}
+
+.container {
+    margin-left : 0px;
+    margin-right : 0px;
+}
+
+.clear20 {
+    margin-top : 20px;
+}
+
+.task {
+    float : left;
+    width : 35%;
+    padding : 25px;
+    overflow-y : auto;
+    border-right : 1px solid #ccc;
+}
+
+.table {
+    margin-bottom : 0px;
+}
+
+.table-bordered th {
+    text-align : center;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th, 
+.table-bordered > tfoot > tr > th, 
+.table-bordered > thead > tr > td, 
+.table-bordered > tbody > tr > td, 
+.table-bordered > tfoot > tr > td {
+    padding : 4px;
+}
+
+.normal {
+	color : #000;
+}
+
+.gold {
+	color : #daa520;
+}
+
+.food {
+	color : #ff4500;
+}
+
+.oil {
+	color : #006400;
+}
+
+.saturday {
+	color : blue;
+}
+
+.sunday {
+	color : red;
+}
