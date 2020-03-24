@@ -8,7 +8,11 @@ $(document).ready(function() {
 	var worksheets = [''];
 	worksheets.forEach(function(worksheet) {
  		$.googleSheetToJSON(id, worksheet).done(function(rows) {
-			console.log(rows);
+			$("#els").append($('<tr/>')
+				.append($('<td/>', { 'align' : 'center' }).append($('<font/>', { text : rows['stock'] } )))
+				.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : rows['index'] } )))
+				.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : rows['rate'] } )))
+			);
 		});
 	});
 });
