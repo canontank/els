@@ -22,9 +22,9 @@ function setContents(rows) {
 	for (var row of rows) {
 		$("#els").append($('<tr/>')
 			.append($('<td/>', { 'align' : 'center' }).append($('<font/>', { text : row['stock'] } )))
-			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['index'] } )))
-			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['rate'], color : 'blue' } )))
-			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['crate'] } )))
+			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['index'], color : 'red' } )))
+			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['rate'], color : 'red' } )))
+			.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : row['crate'], color : 'red' } )))
 		);
 	}
 }
