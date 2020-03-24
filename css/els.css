@@ -1,6 +1,5 @@
 body {
-    padding-top : 50px;
-    font-size : 14px;
+    padding-top : 70px;
 }
 
 .container {
@@ -10,14 +9,6 @@ body {
 
 .clear20 {
     margin-top : 20px;
-}
-
-.task {
-    float : left;
-    width : 35%;
-    padding : 25px;
-    overflow-y : auto;
-    border-right : 1px solid #ccc;
 }
 
 .table {
@@ -34,29 +25,5 @@ body {
 .table-bordered > thead > tr > td, 
 .table-bordered > tbody > tr > td, 
 .table-bordered > tfoot > tr > td {
-    padding : 4px;
-}
-
-.normal {
-	color : #000;
-}
-
-.gold {
-	color : #daa520;
-}
-
-.food {
-	color : #ff4500;
-}
-
-.oil {
-	color : #006400;
-}
-
-.saturday {
-	color : blue;
-}
-
-.sunday {
-	color : red;
+    padding : 6px;
 }
