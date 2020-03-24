@@ -4,8 +4,10 @@ $(document).ready(function() {
 		.append($('<th/>', {}).append($('<font/>', { text : '지수' } )))
 		.append($('<th/>', {}).append($('<font/>', { text : '비율' } )))
 	);
+	var id = '1qyFWwTpoDyFf4grH3ipuSSk35fgxhSiPD-zq6aHih3E';
+	var worksheets = [''];
 	worksheets.forEach(function(worksheet) {
- 		$.googleSheetToJSON('1qyFWwTpoDyFf4grH3ipuSSk35fgxhSiPD-zq6aHih3E', [''])
+ 		$.googleSheetToJSON(id, [''])
 			.done(function(rows) {
 				console.log(rows);
 				$("#els").append($('<tr/>')
