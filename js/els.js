@@ -7,15 +7,8 @@ $(document).ready(function() {
 	var id = '1qyFWwTpoDyFf4grH3ipuSSk35fgxhSiPD-zq6aHih3E';
 	var worksheets = [''];
 	worksheets.forEach(function(worksheet) {
- 		$.googleSheetToJSON(id, [''])
-			.done(function(rows) {
-				console.log(rows);
-				$("#els").append($('<tr/>')
-					.append($('<td/>', { 'align' : 'center' }).append($('<font/>', { text : rows.get("stock") } )))
-					.append($('<td/>', { 'align' : ' right' }).append($('<font/>', { text : rows.get("index") } )))
-					.append($('<td/>', { 'align' :  'right' }).append($('<font/>', { text : rows.get("rate") } )))
-				);
-			}
-		);
+ 		$.googleSheetToJSON(id, worksheet).done(function(rows) {
+			console.log(rows);
+		});
 	});
 });
