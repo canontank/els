@@ -5,6 +5,7 @@ $(document).ready(function() {
  		$.googleSheetToJSON(id, worksheet)
 			.done(function(rows) {
 				console.log(rows);
+				console.log(rows("stock"));
 			}
 		);
 	});
