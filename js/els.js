@@ -24,8 +24,8 @@ function setElsTitle() {
 	$("#els").append($('<tr/>')
 		.append($('<th/>', { html : '종목' }))
 		.append($('<th/>', { html : '지수' }))
-		.append($('<th/>', { html : '변동' }))
 		.append($('<th/>', { html : '비율' }))
+		.append($('<th/>', { html : '변동' }))
 	);
 }
 
