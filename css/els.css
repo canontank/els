@@ -27,3 +27,29 @@ body {
 .table-bordered > tfoot > tr > td {
     padding : 6px;
 }
+
+.stock {
+    text-align : center;
+}
+
+.index {
+    text-align : right;
+    font-weight : bold;
+}
+
+.rate {
+    text-align : right;
+    font-weight : bold;
+}
+
+.crate {
+    text-align : right;
+}
+
+.red {
+    color : red;
+}
+
+.blue {
+    color : blue;
+}
