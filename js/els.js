@@ -1,23 +1,15 @@
-var key = '1qyFWwTpoDyFf4grH3ipuSSk35fgxhSiPD-zq6aHih3E';
-var notiArr = new Array(
-	new Array( "2020-04-14", "85%" ),
-	new Array( "2020-10-14", "75%" ),
-	new Array( "2021-04-14", "85%" ),
-	new Array( "2021-10-14", "85%" ),
-	new Array( "2022-04-14", "80%" ),
-	new Array( "2022-10-14", "65%" )
-);
-
 $(document).ready(function() {
-	var worksheets = [''];
-	worksheets.forEach(function(worksheet) {
-		$.googleSheetToJSON(key, worksheet).done(function(rows) {
-			setElsTitle();
-			setElsContents(rows);
-			setNotiTitle();
-			setNotiContents();
-		});
+	var key = '1NTJNOJi-3tvdxEhz0bE3Dsvba4A91aMWNvOD0YvVEw8';
+	var worksheets = ['', '2'];
+	$.googleSheetToJSON(key, worksheets[0]).done(function(rows) {
+		setElsTitle();
+		setElsContents(rows);
 	});
+	$.googleSheetToJSON(key, worksheets[1]).done(function(rows) {
+		setNotiTitle();
+		setNotiContents(rows);
+	});
+	addHistory();
 });
 
 function setElsTitle() {
@@ -63,18 +55,35 @@ function getCRate(index, yindex, crate) {
 function setNotiTitle() {
 	$("#noti").append($('<tr/>')
 		.append($('<th/>', { html : '구분' }))
-		.append($('<th/>', { html : '날짜' }))
+		.append($('<th/>', { html : '평가일' }))
 		.append($('<th/>', { html : '배리어' }))
+		.append($('<th/>', { html : '상환' }))
 	);
 }
 
-function setNotiContents() {
-	for (var i = 0; i < notiArr.length; i++) {
-		var noti = notiArr[i];
+function setNotiContents(rows) {
+	for (var row of rows) {
+		var repay = row['repay'] == '#N/A' ? '' : row['repay'];
 		$("#noti").append($('<tr/>')
-			.append($('<td/>', { html : (i + 1) + "차 평가" }))
-			.append($('<td/>', { html : noti[0] }))
-			.append($('<td/>', { html : noti[1] }))
+			.append($('<td/>', { html : row['gbn'] }))
+			.append($('<td/>', { html : row['date'] }))
+			.append($('<td/>', { html : row['barrier'] }))
+			.append($('<td/>', { html : repay, class : getRepayClass(repay) }))
 		);
 	}
+}
+
+function getRepayClass(repay) {
+	if (repay == "성공")
+		return 'repay red';
+	return 'repay';
+}
+
+function addHistory() {
+	$.ajax({
+		url : "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf0BzwAkF1BcB0r63ZqRZLZiF5Q377eCsr2CDlNmUzbD0kKhw/formResponse",
+		data : {
+			'entry.1937100680' : navigator.userAgent.toLowerCase()
+		}
+	});
 }
