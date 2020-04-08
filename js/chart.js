@@ -15,18 +15,17 @@ function setChart() {
 }
 
 function setLabelsAndDataList(rows) {
-	for (var row of rows) {
-		if (row['date'] != null) {
-			labels[0].push(getDateLabel(row['date']));
-			dataList[0].push(row['percent'].replace("%", ""));
-		}
-		if (row['date_'] != null && row['date_'][0] != null) {
-			labels[1].push(getDateLabel(row['date_'][0]));
-			dataList[1].push(row['percent_'][0].replace("%", ""));
-		}
-		if (row['date_'] != null && row['date_'][1] != null) {
-			labels[2].push(getDateLabel(row['date_'][1]));
-			dataList[2].push(row['percent_'][1].replace("%", ""));
+	var keyList = [ 'k', 's', 'e' ];
+	for (var i = 0; i < rows.length; i++) {
+		if (i == 0)
+			continue;
+		var row = rows[i];
+		for (var j = 0; j < keyList.length; j++) {
+			var key = keyList[j];
+			if (row[key + 'date'] == null)
+				continue;
+			labels[j].push(getDateLabel(row[key + 'date']));
+			dataList[j].push(row[key + 'percent'].replace("%", ""));
 		}
 	}
 }
