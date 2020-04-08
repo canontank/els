@@ -1,6 +1,7 @@
 var div = [ "#kospi200", "#sp500", "#eurostoxx50" ];
 var color = [ "red", "blue", "green" ];
 var backgroundColor = [ "#ff7b5a", "#7296c1", "#6eaa5e" ];
+var keyList = [ 'k', 's', 'e' ];
 var labels = [ [], [], [] ];
 var dataList = [ [], [], [] ];
 
@@ -15,7 +16,6 @@ function setChart() {
 }
 
 function setLabelsAndDataList(rows) {
-	var keyList = [ 'k', 's', 'e' ];
 	for (var i = 0; i < rows.length; i++) {
 		if (i == 0)
 			continue;
