@@ -34,5 +34,5 @@ function setRepayContents(rows) {
 function getRepayClass(repay) {
 	if (repay == "성공")
 		return 'repay red';
-	return 'repay';
+	return '';
 }
