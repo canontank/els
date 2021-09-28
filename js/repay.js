@@ -1,9 +1,14 @@
 function setRepay() {
-	var key = '1NTJNOJi-3tvdxEhz0bE3Dsvba4A91aMWNvOD0YvVEw8';
-	var worksheet = '2';
-	$.googleSheetToJSON(key, worksheet).done(function(rows) {
-		setRepayTitle();
-		setRepayContents(rows);
+    $.ajax({
+		type: "GET",
+		url : "https://script.google.com/macros/s/AKfycbx3JmJVyNTGJrpNMJ3n8aMz8_0DoC3INL1a57onof42cfmrYm7B4hjcIPIjk_nrI99z/exec",
+		data: {
+			"sheet": "repay"
+		},
+        success : function(rows) {
+            setRepayTitle();
+		    setRepayContents(rows);
+        }
 	});
 }
 

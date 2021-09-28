@@ -6,12 +6,17 @@ var labels = [ [], [], [] ];
 var dataList = [ [], [], [] ];
 
 function setChart() {
-	var key = '1NTJNOJi-3tvdxEhz0bE3Dsvba4A91aMWNvOD0YvVEw8';
-	var worksheet = '3';
-	$.googleSheetToJSON(key, worksheet).done(function(rows) {
-		setLabelsAndDataList(rows);
-		setChartTitle();
-		setChartContents();
+    $.ajax({
+		type: "GET",
+		url : "https://script.google.com/macros/s/AKfycbx3JmJVyNTGJrpNMJ3n8aMz8_0DoC3INL1a57onof42cfmrYm7B4hjcIPIjk_nrI99z/exec",
+		data: {
+			"sheet": "chart"
+		},
+        success : function(rows) {
+            setLabelsAndDataList(rows);
+		    setChartTitle();
+		    setChartContents();
+        }
 	});
 }
 
@@ -22,7 +27,7 @@ function setLabelsAndDataList(rows) {
 		var row = rows[i];
 		for (var j = 0; j < keyList.length; j++) {
 			var key = keyList[j];
-			if (row[key + 'date'] == null)
+			if (row[key + 'date'] == null || row[key + 'date'] == "")
 				continue;
 			labels[j].push(getDateLabel(row[key + 'date']));
 			dataList[j].push(row[key + 'percent'].replace("%", ""));

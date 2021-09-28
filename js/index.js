@@ -1,9 +1,14 @@
 function setIndex() {
-	var key = '1NTJNOJi-3tvdxEhz0bE3Dsvba4A91aMWNvOD0YvVEw8';
-	var worksheet = '';
-	$.googleSheetToJSON(key, worksheet).done(function(rows) {
-		setIndexTitle();
-		setIndexContents(rows);
+    $.ajax({
+		type: "GET",
+		url : "https://script.google.com/macros/s/AKfycbx3JmJVyNTGJrpNMJ3n8aMz8_0DoC3INL1a57onof42cfmrYm7B4hjcIPIjk_nrI99z/exec",
+		data: {
+			"sheet": "index"
+		},
+        success : function(rows) {
+            setIndexTitle();
+            setIndexContents(rows);
+        }
 	});
 }
 
@@ -43,6 +48,6 @@ function getCRate(index, yindex, crate) {
 		crate = crate.replace('-', '');
 		return '▼' + crate;
 	} else {
-		return crate;
+		return crate.toFixed(2);
 	}
 }
