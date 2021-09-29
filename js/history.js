@@ -1,19 +1,25 @@
 function addHistory() {
 	$.ajax({
 		type: "GET",
-		url : "https://script.google.com/macros/s/AKfycbxANywOqZi9FFrpzhTXypiqeYDNdB6y1bM3awvy03ncATKGOp8/exec",
+        url : "https://script.google.com/macros/s/AKfycbzHp_09-mbDjw_iBxqwqHPZkd1TaKJO8job2qacWbd9a6k_WrMY9x3rNCeZXjqaSfdo/exec",
 		data: {
-			"location": navigator.userAgent.toLowerCase()
+            "cmd" : "add",
+			"location" : navigator.userAgent.toLowerCase()
 		}
 	});
 }
 
 function setHistory() {
-	var key = '10J1Obzx7dyIRodtX4snd33ZxAsZiSVzBJ9jDiYSCw0c';
-	var worksheet = '1';
-	$.googleSheetToJSON(key, worksheet).done(function(rows) {
-		setHistoryTitle();
-		setHistoryContents(rows);
+    $.ajax({
+		type: "GET",
+        url : "https://script.google.com/macros/s/AKfycbzHp_09-mbDjw_iBxqwqHPZkd1TaKJO8job2qacWbd9a6k_WrMY9x3rNCeZXjqaSfdo/exec",
+		data: {
+            "cmd" : "get"
+		},
+        success : function(rows) {
+            setHistoryTitle();
+            setHistoryContents(rows);
+        }
 	});
 }
 
@@ -32,7 +38,7 @@ function setHistoryContents(rows) {
 	for (var row of rows) {
 		if (row['location'].indexOf('linux') <= 0)
 			continue;
-		timeStamp = row['timestamp'];
+		timeStamp = row['Timestamp'];
 		count++;
 		if (!isToday(timeStamp))
 			continue;
