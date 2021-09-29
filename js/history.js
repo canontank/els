@@ -1,7 +1,7 @@
 function addHistory() {
 	$.ajax({
 		type: "GET",
-        url : "https://script.google.com/macros/s/AKfycbzHp_09-mbDjw_iBxqwqHPZkd1TaKJO8job2qacWbd9a6k_WrMY9x3rNCeZXjqaSfdo/exec",
+        url : "https://script.google.com/macros/s/AKfycbzuZs8HSavIm3efG6N_K88kcV1nlhB4210Txbs6LPJFhtNLjNc-qTSHXWZH9nQ3qqRx/exec",
 		data: {
             "cmd" : "add",
 			"location" : navigator.userAgent.toLowerCase()
@@ -12,7 +12,7 @@ function addHistory() {
 function setHistory() {
     $.ajax({
 		type: "GET",
-        url : "https://script.google.com/macros/s/AKfycbzHp_09-mbDjw_iBxqwqHPZkd1TaKJO8job2qacWbd9a6k_WrMY9x3rNCeZXjqaSfdo/exec",
+        url : "https://script.google.com/macros/s/AKfycbzuZs8HSavIm3efG6N_K88kcV1nlhB4210Txbs6LPJFhtNLjNc-qTSHXWZH9nQ3qqRx/exec",
 		data: {
             "cmd" : "get"
 		},
