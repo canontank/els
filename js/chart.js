@@ -6,17 +6,17 @@ var labels = [ [], [], [] ];
 var dataList = [ [], [], [] ];
 
 function setChart() {
-    $.ajax({
+	$.ajax({
 		type: "GET",
 		url : "https://script.google.com/macros/s/AKfycbx3JmJVyNTGJrpNMJ3n8aMz8_0DoC3INL1a57onof42cfmrYm7B4hjcIPIjk_nrI99z/exec",
 		data: {
 			"sheet": "chart"
 		},
-        success : function(rows) {
-            setLabelsAndDataList(rows);
-		    setChartTitle();
-		    setChartContents();
-        }
+		success : function(rows) {
+			setLabelsAndDataList(rows);
+			setChartTitle();
+			setChartContents();
+		}
 	});
 }
 
