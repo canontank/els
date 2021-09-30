@@ -1,25 +1,25 @@
 function addHistory() {
 	$.ajax({
 		type: "GET",
-        url : "https://script.google.com/macros/s/AKfycbzuZs8HSavIm3efG6N_K88kcV1nlhB4210Txbs6LPJFhtNLjNc-qTSHXWZH9nQ3qqRx/exec",
+		url : "https://script.google.com/macros/s/AKfycbzuZs8HSavIm3efG6N_K88kcV1nlhB4210Txbs6LPJFhtNLjNc-qTSHXWZH9nQ3qqRx/exec",
 		data: {
-            "cmd" : "add",
+			"cmd" : "add",
 			"location" : navigator.userAgent.toLowerCase()
 		}
 	});
 }
 
 function setHistory() {
-    $.ajax({
+	$.ajax({
 		type: "GET",
-        url : "https://script.google.com/macros/s/AKfycbzuZs8HSavIm3efG6N_K88kcV1nlhB4210Txbs6LPJFhtNLjNc-qTSHXWZH9nQ3qqRx/exec",
+		url : "https://script.google.com/macros/s/AKfycbzuZs8HSavIm3efG6N_K88kcV1nlhB4210Txbs6LPJFhtNLjNc-qTSHXWZH9nQ3qqRx/exec",
 		data: {
-            "cmd" : "get"
+			"cmd" : "get"
 		},
-        success : function(rows) {
-            setHistoryTitle();
-            setHistoryContents(rows);
-        }
+		success : function(rows) {
+			setHistoryTitle();
+			setHistoryContents(rows);
+		}
 	});
 }
 
