@@ -1,14 +1,14 @@
 function setRepay() {
-    $.ajax({
+	$.ajax({
 		type: "GET",
 		url : "https://script.google.com/macros/s/AKfycbx3JmJVyNTGJrpNMJ3n8aMz8_0DoC3INL1a57onof42cfmrYm7B4hjcIPIjk_nrI99z/exec",
 		data: {
 			"sheet": "repay"
 		},
-        success : function(rows) {
-            setRepayTitle();
-		    setRepayContents(rows);
-        }
+		success : function(rows) {
+			setRepayTitle();
+			setRepayContents(rows);
+		}
 	});
 }
 
