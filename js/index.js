@@ -1,14 +1,14 @@
 function setIndex() {
-    $.ajax({
+	$.ajax({
 		type: "GET",
 		url : "https://script.google.com/macros/s/AKfycbx3JmJVyNTGJrpNMJ3n8aMz8_0DoC3INL1a57onof42cfmrYm7B4hjcIPIjk_nrI99z/exec",
 		data: {
 			"sheet": "index"
 		},
-        success : function(rows) {
-            setIndexTitle();
-            setIndexContents(rows);
-        }
+        	success : function(rows) {
+			setIndexTitle();
+			setIndexContents(rows);
+		}
 	});
 }
 
