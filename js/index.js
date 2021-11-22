@@ -49,6 +49,6 @@ function getCRate(index, yindex, crate) {
 		return '▼' + crate;
 	} else {
 		//return crate.toFixed(2);
-		return '0.00';
+		return '0.00%';
 	}
 }
