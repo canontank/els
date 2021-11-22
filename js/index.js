@@ -48,6 +48,7 @@ function getCRate(index, yindex, crate) {
 		crate = crate.replace('-', '');
 		return '▼' + crate;
 	} else {
-		return crate.toFixed(2);
+		//return crate.toFixed(2);
+		return '0.00';
 	}
 }
