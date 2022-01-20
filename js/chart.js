@@ -63,7 +63,14 @@ function setChartContents() {
 			options: {
 				legend: {
 					display: false
-				}
+				},
+				scales : {
+                    			yAxes : [{
+                        			ticks : {
+                            				min : 0
+                        			}
+                    			}]
+                		}
 			}
 		});
 	}
